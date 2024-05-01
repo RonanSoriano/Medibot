@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>What are some common misconceptions about nutrition and healthy eating?</title>
+    <link rel="stylesheet" href="static/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karla:400">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <!-- Bootstrap JS for dropdown menu -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    
+<style>
+    /* Base CSS for the entire website */
+    body {
+        font-family: 'Karla', sans-serif;
+        margin: 0;
+        padding: 0;
+        font-weight: 100;
+        background-color: #9fc5fd;
+        background-image: url(static/2.png);
+        background-color: rgba(159, 197, 253, 0.5);
+        background-size: cover; /* or background-size: contain; */
+        background-repeat: no-repeat; /* Prevent background image from repeating */
+    }
+
+    a {
+        color: #2196F3; /* Blue link color */
+    }
+
+    a:hover {
+        color: #2196F3; /* Darker blue on hover */
+    }
+
+    /* Main content container */
+    .container {
+        max-width: 800px;
+        margin: 80px auto; /* Center the container and add space from the header */
+        padding: 0 20px;
+    }
+
+    /* Forum post */
+    .forum-post {
+        background-color: #ffffff; /* Light gray background for each post */
+        padding: 20px;
+        border-radius: 8px;
+        margin-bottom: 20px;
+    }
+
+    .forum-post h2 {
+        margin-top: 0;
+        color: #333; /* Dark gray heading color */
+    }
+
+    .forum-post p {
+        color: #555; /* Darker gray text color */
+        line-height: 1.6;
+        text-align: left;
+    }
+
+    .forum-post .post-meta {
+        color: #777; /* Light gray text for meta information */
+        font-size: 14px;
+    }
+
+    .forum-post .post-meta span {
+        margin-right: 10px;
+    }
+
+    /* Dark mode styles */
+    body.dark-mode {
+        background-color: #333;
+        color: #fff;
+    }
+
+    /* Dark mode text color for certain elements */
+    body.dark-mode .forum-post h2,
+    body.dark-mode .forum-post p,
+    body.dark-mode .forum-post .post-meta {
+        color: #fff;
+    }
+
+    /* Dark mode link color */
+    body.dark-mode a {
+        color: #4CAF50;
+    }
+
+    /* Dark mode switch styles */
+    .toggle-switch-container {
+        display: flex;
+        align-items: center;
+    }
+
+    .toggle-switch {
+        position: relative;
+        display: inline-block;
+        width: 50px;
+        height: 24px;
+        margin-right: 10px;
+    }
+
+    .toggle-slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        transition: .4s;
+        border-radius: 34px;
+    }
+
+    .toggle-slider:before {
+        position: absolute;
+        content: "";
+        height: 20px;
+        width: 20px;
+        left: 2px;
+        bottom: 2px;
+        background-color: white;
+        transition: .4s;
+        border-radius: 50%;
+    }
+
+    input:checked + .toggle-slider {
+        background-color: #2196F3;
+    }
+
+    input:checked + .toggle-slider:before {
+        transform: translateX(26px);
+    }
+
+
+
+    /* Additional styles specific to the Contact Us page */
+    .contact-details p {
+        margin-top: 0;
+        font-size: 18px;
+        margin-bottom: 20px;
+        color: #555; /* Set the text color */
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Add a subtle text shadow */
+        transition: color 0.3s ease, transform 0.3s ease; /* Add transition for color change and transform */
+    }
+
+    .contact-details p:hover {
+        color: #9fc5fd; /* Change text color on hover */
+        transform: scale(1.1); /* Scale up the text on hover */
+    }
+
+    .contact-details p a {
+        color: black; /* Set anchor text color to black */
+        text-decoration: none; /* Remove underline */
+    }
+
+    .contact-details p a:hover,
+    .contact-details p a:focus {
+        background-color: transparent; /* Remove background color on hover/focus */
+        border: none; /* Remove border on hover/focus */
+    }
+
+    .profile-image {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        margin-bottom: 20px;
+        transition: transform 0.3s ease; /* Add transition for smooth animation */
+    }
+
+    .profile-image:hover {
+        transform: scale(1.5); /* Increase size on hover */
+    }
+
+    /* Hover effect on text */
+    body.dark-mode .contact-details p:hover {
+        color: #9fc5fd; /* Blue color on hover */
+    }
+   /* Additional styles specific to the Comments Section */
+.comments {
+background-color: #f9f9f9;
+padding: 20px;
+border-radius: 8px;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+margin-top: 20px;
+}
+
+.comment {
+display: flex;
+margin-bottom: 20px;
+text-align: left;
+}
+
+.comment-user {
+background-color: #007bff;
+color: #fff;
+border-radius: 50%;
+width: 40px;
+height: 40px;
+display: flex;
+justify-content: center;
+align-items: center;
+font-weight: bold;
+margin-right: 10px;
+}
+
+.comment-text {
+flex: 1;
+border-radius: 8px;
+background-color: #fff;
+padding: 12px;
+position: relative;
+}
+
+.comment-content {
+margin-bottom: 8px;
+word-wrap: break-word;
+}
+
+.comment-options {
+display: flex;
+justify-content: flex-end;
+align-items: center;
+}
+
+.delete-comment {
+color: #dc3545;
+cursor: pointer;
+font-size: 14px;
+}
+
+.delete-comment:hover {
+text-decoration: underline;
+}
+
+textarea {
+width: 100%;
+height: 80px;
+padding: 12px;
+box-sizing: border-box;
+margin-bottom: 12px;
+border: 1px solid #ccc;
+border-radius: 4px;
+resize: vertical;
+}
+
+button {
+width: 170px;
+height: 40px;
+padding: 0;
+background-color: #9fc5fd;
+color: #fff;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+font-size: 14px;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+button:hover {
+background-color: #0056b3;
+}
+
+    /* Dark mode scrollbar */
+    body.dark-mode ::-webkit-scrollbar-thumb {
+        background: #666; /* Dark mode handle color */
+    }
+
+
+
+</style>
+</head>
+<body>
+    <nav>
+        <a href="/">
+            <img src="{{ url_for('static', filename='logo.png') }}" alt="MediBot Logo" class="logo" style="max-height: 50px; max-width: 150px;">
+        </a>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/chatbot">ChatBot</a></li>
+            <li><a href="/forum">Forum</a></li>
+            <li><a href="/contact">Contact Us</a></li> <!-- Link to Contact Us page -->
+        </ul>
+    </nav>
+    <br>
+    <br>
+    <div class="container">
+<!-- Forum post -->
+<div class="forum-post">
+    <div class="post-header">
+        <h1>What are some common misconceptions about nutrition and healthy eating?</h1>
+        <span class="post-author">Posted by <strong>MitishaAgrawal03</strong></span>
+        <span class="post-date">November 1, 2023
+        </span>
+    </div>
+    <div class="post-content">
+        <!-- Forum post content -->
+        <p>I've been every positive for these past years and just recently have begun to just want to give up. I'm just so tired of this constant horrible cough. So, so tired of these daily regiments. Since my Bronx is so bad and myTBM is giving way and it's just so hard to get this sickening mucus up and out, it just has all become so tiresome.  I can not sleep more than maybe one and half hours to 2 hours a night due to this cough.  I'd give anything to have just one day, one day to not cough or have to blow my nose and maybe six to eight hours of uninterruped sleep and maybe dream. I cannot remember the last time I actually had a dream.  Oh, well.... Does anyone else feel this way?</p>
+        <!-- Copy to Chat button -->
+        <button class="copy-to-chat-btn" onclick="copyToChat('I\'ve been every positive for these past years and just recently have begun to just want to give up. I\'m just so tired of this constant horrible cough. So, so tired of these daily regiments. Since my Bronx is so bad and myTBM is giving way and it\'s just so hard to get this sickening mucus up and out, it just has all become so tiresome.  I can not sleep more than maybe one and half hours to 2 hours a night due to this cough.  I\'d give anything to have just one day, one day to not cough or have to blow my nose and maybe six to eight hours of uninterruped sleep and maybe dream. I cannot remember the last time I actually had a dream.  Oh, well.... Does anyone else feel this way?')">Copy to Chat</button>
+    </div>
+</div>
+    
+            <!-- Comments Section 1 -->
+            <div class="comments">
+                <!-- Existing comments for Section 1 -->
+                <div id="commentList4">
+                    <!-- Comments will be dynamically added here -->
+                </div>
+                <div class="comment">
+                    <textarea id="commentInput1" placeholder="Write your comment here..."></textarea>
+                    <button class="smaller" onclick="saveComment(4)">Save Comment</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <!-- OpenAI API Integration -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        // Function to save a new comment
+        function saveComment(storageNumber) {
+            const commentInput = document.getElementById("commentInput" + storageNumber).value;
+            if (commentInput.trim() !== "") {
+                // Get existing comments from local storage or initialize an empty array
+                let comments = JSON.parse(localStorage.getItem("comments" + storageNumber)) || [];
+                // Add new comment to the array
+                comments.push(commentInput);
+                // Save updated comments to local storage
+                localStorage.setItem("comments" + storageNumber, JSON.stringify(comments));
+                // Display comments
+                displayComments(storageNumber);
+                // Clear the comment input field
+                document.getElementById("commentInput" + storageNumber).value = "";
+                // Get AI response for the new comment (you can add this if needed)
+                // getAIResponse(commentInput);
+            } else {
+                alert("Please enter a comment before saving.");
+            }
+        }
+    
+        // Function to display comments
+        function displayComments(storageNumber) {
+            const commentList = document.getElementById("commentList" + storageNumber);
+            // Clear existing comments
+            commentList.innerHTML = "";
+            // Get comments from local storage
+            let comments = JSON.parse(localStorage.getItem("comments" + storageNumber)) || [];
+            // Display each comment
+            comments.forEach((comment, index) => {
+                const commentDiv = document.createElement("div");
+                commentDiv.classList.add("comment");
+                commentDiv.innerHTML = `
+                    <div class="comment-user">U</div>
+                    <div class="comment-text">
+                        <div class="comment-content">${comment}</div>
+                        <div class="comment-options">
+                            <span class="delete-comment" onclick="deleteComment(${index}, ${storageNumber})">Delete</span>
+                        </div>
+                    </div>`;
+                commentList.appendChild(commentDiv);
+            });
+        }
+    
+        // Function to delete a comment
+        function deleteComment(index, storageNumber) {
+            let comments = JSON.parse(localStorage.getItem("comments" + storageNumber)) || [];
+            // Remove the comment at the specified index
+            comments.splice(index, 1);
+            // Save the updated comments back to local storage
+            localStorage.setItem("comments" + storageNumber, JSON.stringify(comments));
+            // Re-display the comments
+            displayComments(storageNumber);
+        }
+    
+        // Function to initialize comments on page load
+        document.addEventListener("DOMContentLoaded", function () {
+            displayComments(4); // Call this function to display comments for Section 2 when the page loads
+        });
+
+         // Dark mode toggle functionality
+         $('#dark-mode-toggle').change(function() {
+                $('body').toggleClass('dark-mode');
+                // Save user preference to local storage
+                localStorage.setItem('darkModeEnabled', $(this).prop('checked'));
+            });
+    
+            // Load user preference from local storage
+            var darkModeEnabled = localStorage.getItem('darkModeEnabled');
+            if (darkModeEnabled === 'true') {
+                $('#dark-mode-toggle').prop('checked', true);
+                $('body').addClass('dark-mode');
+            }
+    
+            $(document).ready(function() {
+        // Initialize dropdowns
+        $('.dropdown-toggle').dropdown();
+    });
+
+    function copyToChat(message) {
+        // Encode message to handle special characters in URL
+        var encodedMessage = encodeURIComponent(message);
+        // Redirect to index.html with the message as a URL parameter
+        window.location.href = '/chatbot?message=' + encodedMessage + '&clear=true';
+    }
+    </script>
+    
+
+    <!-- Bootstrap JS for dropdown menu -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Medibot</title>
+    <link href="{{ url_for('static', filename='index.css') }}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karla:400">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <style>
+
+    html, body {
+        height: 100%;
+        overflow-x: hidden; /* Hide horizontal scrollbar */
+        transition: background-color 0.3s ease; /* Add transition for smooth mode change */
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        display: table;
+        font-weight: 100;
+        font-family: 'Karla';
+    }
+
+    .container {
+        text-align: center;
+        display: table-cell;
+        vertical-align: top;
+    }
+
+    .content {
+        text-align: center;
+        display: inline-block;
+    }
+
+    .title {
+        font-size: 96px;
+    }
+    .caret {
+    display: none; /* Hide the dropdown arrow */
+}
+
+    .opt {
+        margin-top: 30px;
+    }
+
+    .opt a {
+        text-decoration: none;
+        font-size: 150%;
+    }
+
+    a:hover {
+        color: rgb(0, 0, 0);
+        text-decoration: none;
+    }
+
+    /* Toggle switch styles */
+    .toggle-switch-container {
+        display: flex;
+        align-items: center; /* Center vertically */
+    }
+
+    .toggle-switch {
+        position: relative;
+        display: inline-block;
+        width: 50px;
+        height: 24px;
+        margin-right: 10px; /* Adjust margin between switch and text */
+    }
+
+    .toggle-switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+
+    .toggle-slider:before {
+        position: absolute;
+        content: "";
+        height: 20px;
+        width: 20px;
+        left: 2px;
+        bottom: 2px;
+        background-color: white;
+        transition: .4s;
+        border-radius: 50%;
+    }
+
+    input:checked + .toggle-slider {
+        background-color: #2196F3;
+    }
+
+    input:checked + .toggle-slider:before {
+        transform: translateX(26px);
+    }
+
+
+    /* Text area styles */
+    textarea {
+        background-color: #f5f5f5; /* Light gray background color */
+        color: #333; /* Dark gray text color */
+        border: none;
+        border-radius: 15px; /* Round border corners */
+        padding: 10px 15px; /* Add padding for better appearance */
+        font-size: 16px; /* Adjust font size */
+        outline: none; /* Remove outline when focused */
+        resize: none; /* Disable resizing */
+        width: calc(100% - 30px); /* Calculate width to fit within parent */
+    }
+
+    /* Send button styles */
+    .send-btn, .clear-history-btn {
+        background-color: #9fc5fd; /* Blue background color */
+        color: #fff; /* White text color */
+        border: none; /* Remove border */
+        padding: 10px 20px; /* Add padding */
+        font-size: 16px; /* Increase font size */
+        border-radius: 15px; /* Round border corners */
+        cursor: pointer; /* Add pointer cursor */
+        transition: background-color 0.3s; /* Smooth transition */
+    }
+
+    .send-btn:hover, .clear-history-btn:hover {
+        background-color: #444444; /* Darker blue on hover */
+    }
+
+    /* Styling the scrollbar */
+/* Width */
+::-webkit-scrollbar {
+  width: 8px; /* Width of the scrollbar */
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent; /* Track color */
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #ccc; /* Handle color */
+  border-radius: 10px; /* Roundness of the handle */
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #999; /* Handle color on hover */
+}
+
+/* CHAT INPUT and BUTTONS */
+.clear-chat-btn {
+    background-color: #ff6c4f; /* Red background color */
+    color: #fff; /* White text color */
+    border: none; /* Remove border */
+    padding: 10px 20px; /* Add padding */
+    font-size: 16px; /* Font size */
+    border-radius: 15px; /* Rounded corners */
+    cursor: pointer; /* Cursor style */
+    margin-left: 10px; /* Adjust spacing */
+}
+
+.clear-chat-btn:hover {
+    background-color: #cc4125; /* Darker red on hover */
+}
+
+.medibot {
+    margin-top: 20px;
+}
+
+/* Adjusted position of the send and clear buttons */
+.send-btn,
+.clear-history-btn,
+.clear-chat-btn {
+    position: relative;
+    top: -50px;
+}
+
+/* Adjusted position of the chat input */
+.chat-input {
+    margin-top: 20px; /* Adjust as needed */
+}
+
+
+footer {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #9fc5fd;
+    display: block;
+    text-align: center;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: #fff;
+    z-index: 10; /* Ensure footer stays on top */
+}
+
+/* Ensure chat container stays above the footer */
+.medibot {
+    margin-bottom: 100px; /* Adjust as needed */
+}
+
+/* Ensure chat input is above the footer */
+.chat-input {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #fff; /* Background color for chat input */
+    padding: 10px 20px;
+    box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.1); /* Add shadow to separate from footer */
+    z-index: 20; /* Ensure chat input stays on top */
+}
+
+.chat-input textarea {
+    width: calc(100% - 140px); /* Adjust width of textarea */
+    margin-right: 10px;
+}
+
+.chat-input button {
+    width: 120px; /* Adjust width of buttons */
+}
+
+/* Adjust the position of the send and clear buttons */
+.send-btn,
+.clear-history-btn,
+.clear-chat-btn {
+    position: relative;
+    top: 0;
+}
+
+
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <nav>
+        <label class="logo">MediBot</label>
+        <ul>
+            <li><a href="/">ChatBot</a></li>
+            <li><a href="/forum">Forum</a></li>
+            <li><a href="/contact">Contact Us</a></li> <!-- Link to Contact Us page -->
+
+        </ul>
+    </nav>
+    <!-- MediBot -->
+    <div class="medibot">
+        <header>
+            <h2>MediBot</h2>
+        </header>
+        <!-- Chat container -->
+        <ul id="chat-container" class="chatbox">
+            <!-- Bot's initial message -->
+            <li class="chat incoming">
+                <span class="material-symbols-outlined">smart_toy</span>
+                <p>Hi, I'm MediBot. How can I help you today?</p>
+            </li>
+        </ul>
+       <!-- Chat input -->
+       <div class="chat-input">
+        <textarea id="user-input" placeholder="Enter a message..." required></textarea>
+        <button id="send-btn" class="send-btn material-symbols-outlined">Send</button>
+        <!-- Clear message history button -->
+        <button id="clear-chat-btn" class="clear-history-btn material-symbols-outlined">&#128465;</button>
+        <button id="clear-history-btn" class="clear-chat-btn material-symbols-outlined">Clear Chat</button>
+    
+    </div>
+   
+</div>
+</div>
+
+
+
+</div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script>
+        // Function to send a message to the chatbot
+        function sendMessage(message) {
+            var userInput = message.trim(); // Trim whitespace from input
+            if (userInput !== '') { // Check if input is not empty
+                $('#chat-container').append('<li class="chat outgoing"><p>' + userInput + '</p></li>');
+                // Send user input to Flask endpoint
+                $.ajax({
+                    type: 'POST',
+                    url: '/chat',
+                    contentType: 'application/json',
+                    data: JSON.stringify({'user_input': userInput}),
+                    success: function(response) {
+                        var botResponse = response.response;
+                        $('#chat-container').append('<li class="chat incoming"><span class="material-symbols-outlined">smart_toy</span><p>' + botResponse + '</p></li>');
+                        scrollToBottom(); // Scroll to the bottom after adding the message
+                    },
+                    error: function(xhr, status, error) {
+                        console.error("AJAX request error:", error);
+                    }
+                });
+            }
+        }
+    
+        // Function to clear chat input
+        function clearChatInput() {
+            $('#user-input').val(''); // Clear the chat input
+        }
+    
+        // Function to scroll to the bottom of the chat container
+        function scrollToBottom() {
+            var chatContainer = $('#chat-container');
+            chatContainer.scrollTop(chatContainer.prop('scrollHeight'));
+        }
+    
+        $(document).ready(function() {
+            // Check if there is a message in the URL parameter
+            var urlParams = new URLSearchParams(window.location.search);
+            var message = urlParams.get('message');
+            if (message) {
+                // Set the message to the chat input and send it automatically
+                $('#user-input').val(message);
+                sendMessage(message);
+            }
+    
+            $('#send-btn').click(function() {
+                sendMessage($('#user-input').val()); // Send message when Send button is clicked
+            });
+    
+            $('#user-input').keypress(function(event) {
+                if (event.keyCode == 13) {
+                    event.preventDefault(); // Prevent default Enter key behavior
+                    sendMessage($('#user-input').val()); // Send message when Enter is pressed
+                }
+            });
+    
+            // Clear message history button functionality
+            $('#clear-history-btn').click(function() {
+                $('#chat-container').empty(); // Remove all chat messages
+                // Add initial bot message after clearing chat history
+                $('#chat-container').append('<li class="chat incoming"><span class="material-symbols-outlined">smart_toy</span><p>Hi, I\'m MediBot. How can I help you today?</p></li>');
+                clearChatInput(); // Clear chat input as well
+            });
+    
+            // Clear chat input button functionality
+            $('#clear-chat-btn').click(function() {
+                clearChatInput(); // Clear chat input when Clear Chat button is clicked
+            });
+    
+            // Dark mode toggle functionality
+            $('#dark-mode-toggle').change(function() {
+                $('body').toggleClass('dark-mode');
+                // Save user preference to local storage
+                localStorage.setItem('darkModeEnabled', $(this).prop('checked'));
+            });
+    
+            // Load user preference from local storage
+            var darkModeEnabled = localStorage.getItem('darkModeEnabled');
+            if (darkModeEnabled === 'true') {
+                $('#dark-mode-toggle').prop('checked', true);
+                $('body').addClass('dark-mode');
+            }
+    
+            // Scroll to the bottom when the page is loaded
+            scrollToBottom();
+        });
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forum - Medibot</title>
+    <link rel="stylesheet" href="static/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karla:400">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital@1&display=swap" rel="stylesheet">
+</head>
+<style>
+</style>
+
+
+
+<body>
+    <nav>
+        <a href="/">
+            <img src="{{ url_for('static', filename='logo.png') }}" alt="MediBot Logo" class="logo" style="max-height: 50px; max-width: 150px;">
+        </a>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/chatbot">ChatBot</a></li>
+            <li><a href="/forum">Forum</a></li>
+            <li><a href="/contact">Contact Us</a></li> <!-- Link to Contact Us page -->
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="subforum">
+            <div class="subforum-title">
+                <h1>Frequently Asked Questions</h1>
+            </div>
+            <div class="subforum-row">
+                <div class="subforum-icon subforum-column center">
+                    <i>#1</i>
+                </div>
+                <div class="subforum-description subforum-column">
+                    <h2><a href="/forum1">How can I prevent coughing?</a></h2>
+                    <p>I've been every positive for these past years and just recently have begun to just want to give up. I'm just so tired of this constant horrible cough...</p>
+                </div>
+                <div class="subforum-stats subforum-column center">
+                    <span>By <b>orenji</span></b>
+                </div>
+                <div class="subforum-info subforum-column">
+                    <p id="p2">September 21, 2023</p>
+                </div>          
+            </div>
+        </div>
+        
+        <div class="subforum">
+            <div class="subforum-title">
+                <h1>General Information</h1>
+            </div>
+            <div class="subforum-row">
+                <div class="subforum-icon subforum-column center">
+                    <i>#2</i>
+                </div>
+                <div class="subforum-description subforum-column">
+                    <h2><a href="/forum2">What's the difference between "good" and "bad" Health Insurance?</a></h2>
+                    <p>I'm trying to compare health insurance plans, but I'm having trouble figuring out what attributes to compare. What makes a health insurance plan "good" or "bad"?...</p>
+                </div>
+                <div class="subforum-stats subforum-column center">
+                    <span>By <b>Quinlove</span></b>
+                </div>
+                <div class="subforum-info subforum-column">
+                    <p id="p2">October 8, 2023</p>
+                </div>          
+            </div>
+        
+            <hr class="subforum-devider">
+
+            <div class="subforum-row">
+                <div class="subforum-icon subforum-column center">
+                    <i>#3</i>
+                </div>
+                <div class="subforum-description subforum-column">
+                    <h2><a href="/forum3">What is the difference between healthcare workers and healthcare professionals?</a></h2>
+                    <p>As the title says. Are they not the same? I’m doing my bachelor thesis and I need to find some resources about healthcare workers...</p>
+                </div>
+                <div class="subforum-stats subforum-column center">
+                    <span>By <b>Justseeingwhatsupp</span></b>
+                </div>
+                <div class="subforum-info subforum-column">
+                    <p id="p2">October 18, 2023</p>
+                </div>   
+            </div>
+
+            <hr class="subforum-devider">
+
+            <div class="subforum-row">
+                <div class="subforum-icon subforum-column center">
+                    <i>#4</i>
+                </div>
+                <div class="subforum-description subforum-column">
+                    <h2><a href="/forum4">What are some common misconceptions about nutrition and healthy eating?</a></h2>
+                    <p>What are your thoughts on this?</p>
+                </div>
+                <div class="subforum-stats subforum-column center">
+                    <span>By <b>MitishaAgrawal03</span></b>
+                </div>
+                <div class="subforum-info subforum-column">
+                    <p id="p2">November 1, 2023</p>
+                </div>
+            </div>
+
+            <hr class="subforum-devider">
+
+            <div class="subforum-row">
+                <div class="subforum-icon subforum-column center">
+                    <i>#5</i>
+                </div>
+                <div class="subforum-description subforum-column">
+                    <h2><a href="/forum5">How do we avoid this disease</a></h2>
+                    <p>my grandfather has alzheimers, its been so sxary to watch him get worse and forget us. he got it in his 50s, wich i think is young :( he was very unhealthy tho...</p>
+                </div>
+                <div class="subforum-stats subforum-column center">
+                    <span>By <b>chuwu</span></b>
+                </div>
+                <div class="subforum-info subforum-column">
+                    <p id="p2">November 5, 2023</p>
+                </div>
+            </div>
+
+            <hr class="subforum-devider">
+
+            <div class="subforum-row">
+                <div class="subforum-icon subforum-column center">
+                    <i>#6</i>
+                </div>
+                <div class="subforum-description subforum-column">
+                    <h2><a href="/forum6">What are the most common symptoms of nutrient deficiencies, and how can they be addressed?</a></h2>
+                    <p>Nutrient deficiencies can have a significant impact on our health and well-being, yet they're often overlooked...</p>
+                </div>
+                <div class="subforum-stats subforum-column center">
+                    <span>By <b>Triedyuthxdulce</span></b>
+                </div>
+                <div class="subforum-info subforum-column">
+                    <p id="p2">November 12, 2023</p>
+                </div>
+
+            </div>
+        </div>
+        
+
+
+            <div class="subforum-row">
+                <div class="subforum-icon subforum-column center">
+                    <i>#7</i>
+                </div>
+                <div class="subforum-description subforum-column">
+                    <h2><a href="/forum7">What are some effective ways to quit smoking or overcome other tobacco-related habits?</a></h2>
+                    <p>kicking the smoking habit can be one of the toughest challenges, but it's also one of the most rewarding... </p>
+                </div>
+                <div class="subforum-stats subforum-column center">
+                    <span>By <b>dububu</span></b>
+                </div>
+                <div class="subforum-info subforum-column">
+                    <p id="p2">November 16, 2023</p>
+                </div>
+            </div>
+
+            <hr class="subforum-devider">
+
+            <div class="subforum-row">
+                <div class="subforum-icon subforum-column center">
+                    <i>#8</i>
+                </div>
+                <div class="subforum-description subforum-column">
+                    <h2><a href="/forum8">How can I improve my sleep quality and establish a consistent sleep routine?</a></h2>
+                    <p>I've been struggling with getting quality sleep and maintaining a consistent sleep routine lately...  </p>
+                </div>
+                <div class="subforum-stats subforum-column center">
+                    <span>By <b>AdeptZeus</span></b>
+                </div>
+                <div class="subforum-info subforum-column">
+                    <p id="p2">November 18, 2023</p>
+                </div>
+            </div>
+
+            <hr class="subforum-devider">
+
+            <div class="subforum-row">
+                <div class="subforum-icon subforum-column center">
+                    <i>#9</i>
+                </div>
+                <div class="subforum-description subforum-column">
+                    <h2><a href="/forum9">What are some of effective strategies for maintaining a healthy lifestyle?</a></h2>
+                    <p>What tried-and-true strategies have you personally found most effective in your journey toward a healthy lifestyle...</p>
+                </div>
+                <div class="subforum-stats subforum-column center">
+                    <span>By <b>angewonk</span></b>
+                </div>
+                <div class="subforum-info subforum-column">
+                    <p id="p2">November 23, 2023</p>
+                </div>
+            </div>
+
+            <hr class="subforum-devider">
+
+            <div class="subforum-row">
+                <div class="subforum-icon subforum-column center">
+                    <i>#10</i>
+                </div>
+                
+                <div class="subforum-description subforum-column">
+                    <h2><a href="/forum10">What are the warning signs of mental health issues, and when should I seek professional help?</a></h2>
+                    <p>mental health is a crucial yet often overlooked aspect of our well-being. ... </p>
+                </div>
+                <div class="subforum-stats subforum-column center">
+                    <span>By <b>Gelooolols</span></b>
+                </div>
+                <div class="subforum-info subforum-column">
+                    <p id="p2">December 16, 2023</p>
+                </div>
+            </div>
+        </div>
+        <!---->
+    </div>
+
+
+
+    <footer>
+        <span>&copy;  Made by C.A.R.E | All Rights Reserved</span>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="main.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Dark mode toggle functionality
+            $('#dark-mode-toggle').change(function() {
+                $('body').toggleClass('dark-mode');
+                // Save user preference to local storage
+                localStorage.setItem('darkModeEnabled', $(this).prop('checked'));
+            });
+
+            // Load user preference from local storage
+            var darkModeEnabled = localStorage.getItem('darkModeEnabled');
+            if (darkModeEnabled === 'true') {
+                $('#dark-mode-toggle').prop('checked', true);
+                $('body').addClass('dark-mode');
+            }
+
+            // Add other script functionalities here
+        });
+    </script>
+</body>
+</html>
